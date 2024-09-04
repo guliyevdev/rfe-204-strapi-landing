@@ -10,24 +10,27 @@ services:
       - .:/app
       - /app/node_modules
     environment:
+      HOST: 0.0.0.0
+      PORT: 1337
+      APP_KEYS: eOfpBsPPN3CqDB8tRcCYqw==,HWFPL/qXP8j5f54KoOYrdQ==,sGRLyamUzq4g4zTkUVnaJA==,gqTzWEp/e3KnnyeXvLzAbw==
+      API_TOKEN_SALT: j7gN1CAcgYudNq0IhNLH5g==
+      ADMIN_JWT_SECRET: Zrzwh2TDlsVyyZDSvsZakQ==
+      TRANSFER_TOKEN_SALT: hNpzPWEGAcF7Hg2h8ZYRqQ==
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
       DATABASE_NAME: gotruckdb
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: 234789
-      APP_KEYS: your_app_keys
-      API_TOKEN_SALT: your_api_token_salt
-      ADMIN_JWT_SECRET: your_admin_jwt_secret
-      JWT_SECRET: your_jwt_secret
+      JWT_SECRET: rm0+YCk9+D5CICYzGAtfqQ==
 
   postgres:
     image: postgres:13
     container_name: postgres
     environment:
-      POSTGRES_DB: your_database_name
-      POSTGRES_USER: your_database_user
-      POSTGRES_PASSWORD: your_database_password
+      POSTGRES_DB: gotruckdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 234789
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:
